@@ -23,7 +23,6 @@ app.get("/", (req, res, next) => {
   //   });
   const shell = require("shelljs");
   shell.exec(`python ./drowsiness_detection.py`);
-  res.send("test");
 });
 
 //Creates the server on default port 8000 and can be accessed through localhost:8000
