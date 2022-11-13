@@ -27,7 +27,12 @@ predict = dlib.shape_predictor(
 (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
 
 # start the video stream thread
-cap = cv2.VideoCapture(0)
+# cap = cv2.VideoCapture(-1)
+
+for i in range(-2, 10):
+    cap = cv2.VideoCapture(i)
+    if cap.read()[0]:
+        break
 flag = 0
 while True:
     ret, frame = cap.read()
