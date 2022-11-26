@@ -3,6 +3,9 @@ import browser from "webextension-polyfill";
 
 browser.runtime.onInstalled.addListener(() => {
   console.emoji("🦄", "extension installed");
-});
 
-console.log("background js here");
+  chrome.tabs.create({
+    url: chrome.extension.getURL("options.html"),
+    active: true,
+  });
+});

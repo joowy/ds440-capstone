@@ -1,8 +1,30 @@
-import * as React from 'react';
+import * as React from "react";
 
-import './styles.scss';
+import "./styles.scss";
+
+const onSuccess = () => {};
+
+const onFail = () => {
+  alert("could not connect to stream. Please allow camera permission!");
+};
+
+const init = () => {
+  if (navigator.webkitGetUserMedia) {
+    navigator.webkitGetUserMedia(
+      { video: true, audio: true },
+      onSuccess,
+      onFail
+    );
+  } else {
+    alert("Camera is not available");
+  }
+};
 
 const Options = () => {
+  React.useEffect(() => {
+    init();
+  }, []);
+
   return (
     <div>
       <form>
