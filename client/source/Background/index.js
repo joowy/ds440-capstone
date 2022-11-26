@@ -1,6 +1,8 @@
-import 'emoji-log';
-import browser from 'webextension-polyfill';
+import "emoji-log";
+import browser from "webextension-polyfill";
 
 browser.runtime.onInstalled.addListener(() => {
-  console.emoji('🦄', 'extension installed');
+  console.emoji("🦄", "extension installed");
 });
+
+console.log("background js here");
