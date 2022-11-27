@@ -200,8 +200,8 @@ const Popup = () => {
         <b> {text} </b>
         <b> :: Count blink = {count} d</b>
       </button>
-      <Webcam />
-      {/* {isOpen ? (
+      {/* <Webcam /> */}
+      {isOpen ? (
         <Webcam
           audio={false}
           ref={videoRef}
@@ -211,7 +211,7 @@ const Popup = () => {
           screenshotFormat="image/jpeg"
           screenshotQuality={1}
         />
-      ) : null} */}
+      ) : null}
     </section>
   );
 };
