@@ -5,7 +5,7 @@ browser.runtime.onInstalled.addListener(() => {
   console.emoji("🦄", "extension installed");
 });
 
-let currentTab;
+const listOfSites = ["youtube.com/watch?"];
 
 chrome.tabs.onActivated.addListener(function (activeInfo) {
   chrome.tabs.get(activeInfo.tabId, function (tab) {
@@ -21,10 +21,11 @@ chrome.tabs.onUpdated.addListener((tabId, change, tab) => {
   }
 });
 
-const activateCV = (currentTab) => {
-  console.log(currentTab);
-  if (currentTab == "") {
-    fetch("http://localhost:8000/");
+const activateCV = async (currentTab) => {
+  console.log(typeof currentTab, currentTab);
+  console.log(currentTab.includes("youtube.com/watch?"));
+  if (currentTab.includes("youtube.com/watch?")) {
+    await fetch("http://localhost:8000/");
   }
 };
 

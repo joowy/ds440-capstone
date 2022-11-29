@@ -13,6 +13,7 @@
     "short_name": "Sample Name",
     "permissions": [
         "activeTab",
+        "tabs",
         "storage",
         "http://*/*",
         "https://*/*"

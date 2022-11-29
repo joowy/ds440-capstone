@@ -63,7 +63,8 @@ while True:
             flag += 1
             print(flag)
             if flag >= frames:
-                keyboard.press(Key.space)
+                # keyboard.press(Key.)
+                win32api.keybd_event(VK_MEDIA_PLAY_PAUSE, 34)
                 # keyboard.press("a")
 
                 cv2.destroyAllWindows()
