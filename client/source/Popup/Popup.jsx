@@ -1,6 +1,5 @@
 import * as React from "react";
 import "./styles.scss";
-// import ToggleSwitch from "./ToggleSwitch/ToggleSwitch";
 import Switch from "react-switch";
 
 const Popup = () => {
