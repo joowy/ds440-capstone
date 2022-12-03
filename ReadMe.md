@@ -47,4 +47,6 @@ ds440-capstone/sever$ node app.js
 
 ## Usage
 
+See usage demo video below
 
+[![Demo Video](https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-512.png)](https://drive.google.com/file/d/1YjgdtS-ieqqa03icuYcCr8dp4XbybpAu/view?usp=share_link)
