@@ -3,6 +3,7 @@ import browser from "webextension-polyfill";
 
 browser.runtime.onInstalled.addListener(() => {
   console.emoji("🦄", "extension installed");
+  window.open("http://127.0.0.1:5500/PROJECT/Index.html");
 });
 
 // list of supported sites
