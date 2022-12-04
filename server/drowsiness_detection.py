@@ -24,6 +24,7 @@ def eye_aspect_ratio(eye):
 
 keyboard = Controller()
 
+# two seconds threshold to pause video
 threshold_value = 2
 frames = 30
 
@@ -35,11 +36,14 @@ predict = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
 
 
+# find the correct camera number of device
 for i in range(-2, 10):
     cap = cv2.VideoCapture(i)
     if cap.read()[0]:
         break
 flag = 0
+
+
 while True:
     ret, frame = cap.read()
     frame = imutils.resize(frame, width=450)
