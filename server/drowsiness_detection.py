@@ -34,8 +34,6 @@ predict = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
 (lStart, lEnd) = face_utils.FACIAL_LANDMARKS_IDXS["left_eye"]
 (rStart, rEnd) = face_utils.FACIAL_LANDMARKS_IDXS["right_eye"]
 
-# start the video stream thread
-# cap = cv2.VideoCapture(-1)
 
 for i in range(-2, 10):
     cap = cv2.VideoCapture(i)
@@ -63,9 +61,7 @@ while True:
             flag += 1
             print(flag)
             if flag >= frames:
-                # keyboard.press(Key.)
                 win32api.keybd_event(VK_MEDIA_PLAY_PAUSE, 34)
-                # keyboard.press("a")
 
                 cv2.destroyAllWindows()
                 cap.release()
