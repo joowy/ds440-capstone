@@ -24,7 +24,7 @@ def eye_aspect_ratio(eye):
 
 keyboard = Controller()
 
-threshold_value = 0.22
+threshold_value = 2
 frames = 30
 
 detect = dlib.get_frontal_face_detector()
