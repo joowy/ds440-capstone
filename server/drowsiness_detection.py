@@ -44,26 +44,38 @@ flag = 0
 
 
 while True:
+    # read data from camera capture
     ret, frame = cap.read()
+    # normalize image
     frame = imutils.resize(frame, width=450)
+    # grayscale image
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    # detect facial objects
     objects = detect(gray, 0)
     for x in objects:
         shape = predict(gray, x)
         shape = face_utils.shape_to_np(shape)
+
+        # get landmarks
         leftEye = shape[lStart:lEnd]
         rightEye = shape[rStart:rEnd]
         leftEAR = eye_aspect_ratio(leftEye)
         rightEAR = eye_aspect_ratio(rightEye)
+
         EAR = (leftEAR + rightEAR) / 2.0
+
         leftEyeHull = cv2.convexHull(leftEye)
         rightEyeHull = cv2.convexHull(rightEye)
+
+        # draw outlines of eyes
         cv2.drawContours(frame, [leftEyeHull], -1, (0, 255, 0), 1)
         cv2.drawContours(frame, [rightEyeHull], -1, (0, 255, 0), 1)
+
         if EAR < threshold_value:
             flag += 1
             print(flag)
             if flag >= frames:
+                # send pause command
                 win32api.keybd_event(VK_MEDIA_PLAY_PAUSE, 34)
 
                 cv2.destroyAllWindows()
