@@ -5,6 +5,7 @@ const app = express();
 //Router to handle the incoming request.
 app.get("/", (req, res, next) => {
   const shell = require("shelljs");
+  //   run python shell
   shell.exec(`python ./drowsiness_detection.py`);
 });
 

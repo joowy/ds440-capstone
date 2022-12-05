@@ -50,3 +50,5 @@ ds440-capstone/sever$ node app.js
 See usage demo video below
 
 [![Demo Video](https://cdn1.iconfinder.com/data/icons/logotypes/32/youtube-512.png)](https://drive.google.com/file/d/1YjgdtS-ieqqa03icuYcCr8dp4XbybpAu/view?usp=share_link)
+
+[Project Presentation](https://docs.google.com/presentation/d/1F_lzYe8wB-hm6lTJeehTPUWtCqTMoAa0/edit?usp=sharing&ouid=114170697512297101077&rtpof=true&sd=true)
