@@ -24,8 +24,8 @@ def eye_aspect_ratio(eye):
 
 keyboard = Controller()
 
-threshold_value = 2
-frames = 30
+threshold_value = 0.20
+frames = 200
 
 detect = dlib.get_frontal_face_detector()
 # load facial landmark model
